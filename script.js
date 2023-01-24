@@ -1,5 +1,5 @@
-let firstCard = 11;
-let secondCard = 10;
+let firstCard = []
+let secondCard = []
 let sum = firstCard + secondCard
 let win = false
 const startGameButton = document.querySelector('.start-Game')
@@ -8,139 +8,77 @@ const player = document.querySelector('.player-l')
 const total = document.querySelector('.sum-l')
 const message = document.querySelector('.message-l')
 
-
-const RandomCard = () => {
-  
-}
-
-let Deck = {
-
-spadeTwo: {
-  name: 'Spade of Two',
-  value: 2
-},
-spadeThree: {
-  name: 'Spade of Three',
-  value: 3
-},
-spadeFour: {
-  name: 'Spade of Four',
-  value: 4
-},
-
-spadeFive: {
-  name: 'Spade of Five',
-  value: 5
-},
-
-spadeSix: {
-  name: 'Spade of Six',
-  value: 6
-},
-spadeSeven: {
-  name: 'Spade of Seven',
-  value: 7
-},
-spadeEight: {
-  name: 'Spade of Eight',
-  value: 8
-},
-
-spadeNine: {
-  name: 'Spade of Nine',
-  value: 9
-},
-
-spadeTen: {
-  name: 'Spade of Ten',
-  value: 10
-},
-
-spadeKing: {
-  name: 'Ace of King',
-  value: 10
-},
-spadeQueen: {
-  name: 'Spade of Queen',
-  value: 10
-},
-
-spadeJack: {
-  name: 'Spade of Club',
-  value: 10
-},
-
-
-spadeAce: {
-  name: 'Spade of Ace',
-  value: 11
-},
+let deck = [
+'C-2', 'C-3', 'C-4', 'C-5', 'C-6', 'C-7', 'C-8', 'C-9', 'CJ-10', 'CQ-10', 'CK-10', 'C-11',
+'D-2', 'D-3', 'D-4', 'D-5', 'D-6', 'D-7', 'D-8', 'D-9', 'DJ-10', 'DQ-10', 'DK-10', 'D-11',
+'H-2', 'H-3', 'H-4', 'H-5', 'H-6', 'H-7', 'H-8', 'H-9', 'HJ-10', 'HQ-10', 'HK-10', 'H-11',
+'S-2', 'S-3', 'S-4', 'S-5', 'S-6', 'S-7', 'S-8', 'S-9', 'SJ-10', 'SQ-10', 'SK-10', 'S-11',
+]
 
 
 
+//  let deck = {
+
+// spadeTwo: {
+//   name: 'Spade of Two',
+//   value: 2
+// },
+// spadeThree: {
+//   name: 'Spade of Three',
+//   value: 3
+// },
+// spadeFour: {
+//   name: 'Spade of Four',
+//   value: 4
+// },
+
+// spadeFive: {
+//   name: 'Spade of Five',
+//   value: 5
+// },
+
+// spadeSix: {
+//   name: 'Spade of Six',
+//   value: 6
+// },
+// spadeSeven: {
+//   name: 'Spade of Seven',
+//   value: 7
+// },
+// spadeEight: {
+//   name: 'Spade of Eight',
+//   value: 8
+// },
+
+// spadeNine: {
+//   name: 'Spade of Nine',
+//   value: 9
+// },
+
+// spadeTen: {
+//   name: 'Spade of Ten',
+//   value: 10
+// },
+
+// spadeKing: {
+//   name: 'Ace of King',
+//   value: 10
+// },
+// spadeQueen: {
+//   name: 'Spade of Queen',
+//   value: 10
+// },
+
+// spadeJack: {
+//   name: 'Spade of Club',
+//   value: 10
+// },
 
 
-
-
-heartTwo: {
-  name: 'Heart of Two',
-  value: 2
-},
-heartThree: {
-  name: 'Heart of Three',
-  value: 3
-},
-heartFour: {
-  name: 'Heart of Four',
-  value: 4
-},
-
-heartFive: {
-  name: 'Heart of Five',
-  value: 5
-},
-
-heartSix: {
-  name: 'Heart of Six',
-  value: 6
-},
-heartSeven: {
-  name: 'Heart of Seven',
-  value: 7
-},
-heartEight: {
-  name: 'Heart of Eight',
-  value: 8
-},
-
-heartNine: {
-  name: 'Heart of Nine',
-  value: 9
-},
-
-heartTen: {
-  name: 'Heart of Ten',
-  value: 10
-},
-
-HeartKing: {
-  name: 'Heart of King',
-  value: 10
-},
-heartQueen: {
-  name: 'Heart of Queen',
-  value: 10
-},
-
-heartJack: {
-  name: 'Heart of Club',
-  value: 10
-},
-
-heartAce: {
-  name: 'Heart of Ace',
-  value: 11
-},
+// spadeAce: {
+//   name: 'Spade of Ace',
+//   value: 11
+// },
 
 
 
@@ -148,143 +86,226 @@ heartAce: {
 
 
 
-clubTwo: {
-  name: 'Club of Two',
-  value: 2
-},
-clubThree: {
-  name: 'Club of Three',
-  value: 3
-},
-clubFour: {
-  name: 'Club of Four',
-  value: 4
-},
+// heartTwo: {
+//   name: 'Heart of Two',
+//   value: 2
+// },
+// heartThree: {
+//   name: 'Heart of Three',
+//   value: 3
+// },
+// heartFour: {
+//   name: 'Heart of Four',
+//   value: 4
+// },
 
-clubFive: {
-  name: 'Club of Five',
-  value: 5
-},
+// heartFive: {
+//   name: 'Heart of Five',
+//   value: 5
+// },
 
-clubSix: {
-  name: 'Club of Six',
-  value: 6
-},
-clubSeven: {
-  name: 'Club of Seven',
-  value: 7
-},
-clubEight: {
-  name: 'Club of Eight',
-  value: 8
-},
+// heartSix: {
+//   name: 'Heart of Six',
+//   value: 6
+// },
+// heartSeven: {
+//   name: 'Heart of Seven',
+//   value: 7
+// },
+// heartEight: {
+//   name: 'Heart of Eight',
+//   value: 8
+// },
 
-clubNine: {
-  name: 'Club of Nine',
-  value: 9
-},
+// heartNine: {
+//   name: 'Heart of Nine',
+//   value: 9
+// },
 
-clubTen: {
-  name: 'Club of Ten',
-  value: 10
-},
+// heartTen: {
+//   name: 'Heart of Ten',
+//   value: 10
+// },
 
-clubKing: {
-  name: 'Club of King',
-  value: 10
-},
-clubQueen: {
-  name: 'club of Queen',
-  value: 10
-},
+// HeartKing: {
+//   name: 'Heart of King',
+//   value: 10
+// },
+// heartQueen: {
+//   name: 'Heart of Queen',
+//   value: 10
+// },
 
-clubJack: {
-  name: 'Club of Club',
-  value: 10
-},
+// heartJack: {
+//   name: 'Heart of Club',
+//   value: 10
+// },
 
-clubAce: {
-  name: 'Club of Ace',
-  value: 11
-},
-
-
-
-
-diamondTwo: {
-  name: 'Diamond of Two',
-  value: 2
-},
-diamondThree: {
-  name: 'Diamond of Three',
-  value: 3
-},
-diamondFour: {
-  name: 'Diamond of Four',
-  value: 4
-},
-
-diamondFive: {
-  name: 'Diamond of Five',
-  value: 5
-},
-
-diamondSix: {
-  name: 'Diamond of Six',
-  value: 6
-},
-diamondSeven: {
-  name: 'Diamond of Seven',
-  value: 7
-},
-diamondEight: {
-  name: 'Diamond of Eight',
-  value: 8
-},
-
-diamondNine: {
-  name: 'Diamond of Nine',
-  value: 9
-},
-
-diamondTen: {
-  name: 'Diamond of Ten',
-  value: 10
-},
-
-diamondKing: {
-  name: 'Diamond of King',
-  value: 10
-},
-diamondQueen: {
-  name: 'Diamond of Queen',
-  value: 10
-},
-
-diamondJack: {
-  name: 'Diamond of Club',
-  value: 10
-},
-
-diamondAce: {
-  name: 'Diamond of Ace',
-  value: 11
-},
+// heartAce: {
+//   name: 'Heart of Ace',
+//   value: 11
+// },
 
 
 
-}
+
+
+
+
+// clubTwo: {
+//   name: 'Club of Two',
+//   value: 2
+// },
+// clubThree: {
+//   name: 'Club of Three',
+//   value: 3
+// },
+// clubFour: {
+//   name: 'Club of Four',
+//   value: 4
+// },
+
+// clubFive: {
+//   name: 'Club of Five',
+//   value: 5
+// },
+
+// clubSix: {
+//   name: 'Club of Six',
+//   value: 6
+// },
+// clubSeven: {
+//   name: 'Club of Seven',
+//   value: 7
+// },
+// clubEight: {
+//   name: 'Club of Eight',
+//   value: 8
+// },
+
+// clubNine: {
+//   name: 'Club of Nine',
+//   value: 9
+// },
+
+// clubTen: {
+//   name: 'Club of Ten',
+//   value: 10
+// },
+
+// clubKing: {
+//   name: 'Club of King',
+//   value: 10
+// },
+// clubQueen: {
+//   name: 'club of Queen',
+//   value: 10
+// },
+
+// clubJack: {
+//   name: 'Club of Club',
+//   value: 10
+// },
+
+// clubAce: {
+//   name: 'Club of Ace',
+//   value: 11
+// },
+
+
+
+
+// diamondTwo: {
+//   name: 'Diamond of Two',
+//   value: 2
+// },
+// diamondThree: {
+//   name: 'Diamond of Three',
+//   value: 3
+// },
+// diamondFour: {
+//   name: 'Diamond of Four',
+//   value: 4
+// },
+
+// diamondFive: {
+//   name: 'Diamond of Five',
+//   value: 5
+// },
+
+// diamondSix: {
+//   name: 'Diamond of Six',
+//   value: 6
+// },
+// diamondSeven: {
+//   name: 'Diamond of Seven',
+//   value: 7
+// },
+// diamondEight: {
+//   name: 'Diamond of Eight',
+//   value: 8
+// },
+
+// diamondNine: {
+//   name: 'Diamond of Nine',
+//   value: 9
+// },
+
+// diamondTen: {
+//   name: 'Diamond of Ten',
+//   value: 10
+// },
+
+// diamondKing: {
+//   name: 'Diamond of King',
+//   value: 10
+// },
+// diamondQueen: {
+//   name: 'Diamond of Queen',
+//   value: 10
+// },
+
+// diamondJack: {
+//   name: 'Diamond of Club',
+//   value: 10
+// },
+
+// diamondAce: {
+//   name: 'Diamond of Ace',
+//   value: 11
+// },
+
+
+
+// }
 
 
 const startGame = () => {
-player.innerHTML = "Cards: " + " " + firstCard
-total.innerHTML = "Sum: " + " " + sum
+// player.innerHTML = "Cards: " + " " + firstCard
+// total.innerHTML = "Sum: " + " " + sum
+
+let x = deck[0]
+console.log(deck[0])
+deck.sort((a, b) => 0.5 - Math.random())
+
+firstCard.push(x)
+console.log(firstCard)
+deck.shift()
 
 
+
+
+// return [randomIndex]
+
+console.log(sum)
+console.log(firstCard)
   console.log("you have pressed the button")
 }
 
 const newCard = () => {
+  deck.shift()
+  deck.push(sum)
+  console.log(sum)
   console.log('You have clicked new card button')
 }
 
