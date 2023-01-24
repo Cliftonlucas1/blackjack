@@ -1,6 +1,6 @@
-let firstCard = []
-let secondCard = []
-let sum = firstCard + secondCard
+let cards = []
+let DealerCard = []
+let sum = 0
 let win = false
 const startGameButton = document.querySelector('.start-Game')
 const newCardButton = document.querySelector('.new-Card')
@@ -8,11 +8,14 @@ const player = document.querySelector('.player-l')
 const total = document.querySelector('.sum-l')
 const message = document.querySelector('.message-l')
 
+
+
+
 let deck = [
-'C-2', 'C-3', 'C-4', 'C-5', 'C-6', 'C-7', 'C-8', 'C-9', 'CJ-10', 'CQ-10', 'CK-10', 'C-11',
-'D-2', 'D-3', 'D-4', 'D-5', 'D-6', 'D-7', 'D-8', 'D-9', 'DJ-10', 'DQ-10', 'DK-10', 'D-11',
-'H-2', 'H-3', 'H-4', 'H-5', 'H-6', 'H-7', 'H-8', 'H-9', 'HJ-10', 'HQ-10', 'HK-10', 'H-11',
-'S-2', 'S-3', 'S-4', 'S-5', 'S-6', 'S-7', 'S-8', 'S-9', 'SJ-10', 'SQ-10', 'SK-10', 'S-11',
+'2-C', '3-C', '4-C', '5-C', '6-C', '7-C', '8-C', '9-C', '10-C', '10-CJ', '10-CQ', '10-CK', '11-CA',                
+'2-D', '3-D', '4-D', '5-D', '6-D', '7-D', '8-D', '9-D', '10-D', '10-DJ', '10-DQ', '10-DK', '11-DA',
+'2-H', '3-H', '4-H', '5-H', '6-H', '7-H', '8-H', '9-H', '10-H', '10-HJ', '10-HQ', '10-HK', '11-HA',
+'2-S', '3-S', '4-S', '5-S', '6-S', '7-S', '8-S', '9-S', '10-S', '10-SJ', '10-SQ', '10-SK', '11-SA'
 ]
 
 
@@ -283,29 +286,37 @@ let deck = [
 const startGame = () => {
 // player.innerHTML = "Cards: " + " " + firstCard
 // total.innerHTML = "Sum: " + " " + sum
-
-let x = deck[0]
-console.log(deck[0])
 deck.sort((a, b) => 0.5 - Math.random())
 
-firstCard.push(x)
-console.log(firstCard)
+let x = deck[0]
+cards.push(x)
+
 deck.shift()
 
 
-
-
-// return [randomIndex]
-
-console.log(sum)
-console.log(firstCard)
+checkWin()
+console.log(parseInt(cards))
   console.log("you have pressed the button")
+ 
 }
 
+
 const newCard = () => {
-  deck.shift()
-  deck.push(sum)
-  console.log(sum)
+  let x = deck[0]
+  let finalValue = []
+  cards.push(x)
+  sum =+ cards
+  
+  cards.forEach((num) =>{
+finalValue.push(parseInt(num))
+// console.log(finalValue)
+    return finalValue
+    
+  })
+ sum = finalValue.reduce((int, value) => int + value, 0)
+console.log(sum)
+
+checkWin()
   console.log('You have clicked new card button')
 }
 
@@ -315,13 +326,13 @@ newCardButton.addEventListener('click', () => newCard())
 
 const checkWin = () => {
   if(sum < 20){
-   message.innerHTML = "Draw A New Card"
+  //  message.innerHTML = "Draw A New Card"
    console.log("Draw A New Card")
     win = false;
   } else if (sum === 21){
     console.log("You have BlackJack!")
     win = true;
-  } else {
+  } else if (sum > 21) {
     console.log("You have lost the game!")
     win = false;
   }
@@ -329,4 +340,3 @@ const checkWin = () => {
 }
 
 
-console.log(checkWin())
