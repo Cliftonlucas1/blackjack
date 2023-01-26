@@ -11,523 +11,460 @@ const message = document.querySelector('.message-l')
 const resetButton = document.querySelector('.reset-button')
 const stayButton = document.querySelector('.stay-button')
 
+let deck = [
+  {
+    name: 'Two',
+    suit: 'Diamond',
+    value: 2,
+    img: ' '
+  },
 
+  {
+    name: 'Three',
+    suit: 'Diamond',
+    value: 3,
+    img: ' '
+  },
 
+  {
+    name: 'Four',
+    suit: 'Diamond',
+    value: 4,
+    img: ' '
+  },
 
-// let deck = [
-
-// '2-C', '3-C', '4-C', '5-C', '6-C', '7-C', '8-C', '9-C', '10-C', '10-CJ', '10-CQ', '10-CK', '11-CA',      
-
-// '2-D', '3-D', '4-D', '5-D', '6-D', '7-D', '8-D', '9-D', '10-D', '10-DJ', '10-DQ', '10-DK', '11-DA',
-
-// '2-H', '3-H', '4-H', '5-H', '6-H', '7-H', '8-H', '9-H', '10-H', '10-HJ', '10-HQ', '10-HK', '11-HA',
-
-// '2-S', '3-S', '4-S', '5-S', '6-S', '7-S', '8-S', '9-S', '10-S', '10-SJ', '10-SQ', '10-SK', '11-SA'
-
-// ]
-
-
-
-  let deck = [
-
-
-{
-  name: 'Two',
-  suit: "Diamond",
-  value: 2,
-  img: " "
-},
-
-{
-  name: 'Three',
-  suit: "Diamond",
-  value: 3,
-  img: " "
-},
-
-{
-  name: 'Four',
-  suit: "Diamond",
-  value: 4,
-  img: " "
-},
-
-{
+  {
     name: 'Five',
-    suit: "Diamond",
+    suit: 'Diamond',
     value: 5,
-    img: " "
-},
+    img: ' '
+  },
 
-{
+  {
     name: 'Six',
-    suit: "Diamond",
+    suit: 'Diamond',
     value: 6,
-    img: " "
-},
+    img: ' '
+  },
 
-{
+  {
     name: 'Seven',
-    suit: "Diamond",
+    suit: 'Diamond',
     value: 7,
-    img: " "
-},
+    img: ' '
+  },
 
-{
+  {
     name: 'Eight',
-    suit: "Diamond",
+    suit: 'Diamond',
     value: 8,
-    img: " "
-},
+    img: ' '
+  },
 
-{
+  {
     name: 'Nine',
-    suit: "Diamond",
+    suit: 'Diamond',
     value: 9,
-    img: " "
-},
+    img: ' '
+  },
 
-{
+  {
     name: 'Ten',
-    suit: "Diamond",
+    suit: 'Diamond',
     value: 10,
-    img: " "
-},
+    img: ' '
+  },
 
-{
+  {
     name: 'Jack',
-    suit: "Diamond",
+    suit: 'Diamond',
     value: 10,
-    img: " "
-},
+    img: ' '
+  },
 
-{
+  {
     name: 'Queen',
-    suit: "Diamond",
+    suit: 'Diamond',
     value: 10,
-    img: " "
-},
+    img: ' '
+  },
 
-{
+  {
     name: 'King',
-    suit: "Diamond",
+    suit: 'Diamond',
     value: 10,
-    img: " "
-},
+    img: ' '
+  },
 
-{
-  name: 'Spade',
-  suit: "Diamond",
-  value: 11,
-  img: " "
-},
+  {
+    name: 'Spade',
+    suit: 'Diamond',
+    value: 11,
+    img: ' '
+  },
 
+  {
+    name: 'Two',
+    suit: 'Heart',
+    value: 2,
+    img: ' '
+  },
 
+  {
+    name: 'Three',
+    suit: 'Heart',
+    value: 3,
+    img: ' '
+  },
 
+  {
+    name: 'Four',
+    suit: 'Heart',
+    value: 4,
+    img: ' '
+  },
 
-{
-  name: 'Two',
-  suit: "Heart",
-  value: 2,
-  img: " "
-},
-
-{
-  name: 'Three',
-  suit: "Heart",
-  value: 3,
-  img: " "
-},
-
-{
-  name: 'Four',
-  suit: "Heart",
-  value: 4,
-  img: " "
-},
-
-{
+  {
     name: 'Five',
-    suit: "Heart",
+    suit: 'Heart',
     value: 5,
-    img: " "
-},
+    img: ' '
+  },
 
-{
+  {
     name: 'Six',
-    suit: "Heart",
+    suit: 'Heart',
     value: 6,
-    img: " "
-},
+    img: ' '
+  },
 
-{
-     
+  {
     name: 'Seven',
-    suit: "Heart",
+    suit: 'Heart',
     value: 7,
-    img: " "
-},
+    img: ' '
+  },
 
-{
+  {
     name: 'Eight',
-    suit: "Heart",
+    suit: 'Heart',
     value: 8,
-    img: " "
-},
+    img: ' '
+  },
 
-{
+  {
     name: 'Nine',
-    suit: "Heart",
+    suit: 'Heart',
     value: 9,
-    img: " "
-},
+    img: ' '
+  },
 
-{
+  {
     name: 'Ten',
-    suit: "Heart",
+    suit: 'Heart',
     value: 10,
-    img: " "
-},
+    img: ' '
+  },
 
-{
+  {
     name: 'Jack',
-    suit: "Heart",
+    suit: 'Heart',
     value: 10,
-    img: " "
-},
+    img: ' '
+  },
 
-{
+  {
     name: 'Queen',
-    suit: "Heart",
+    suit: 'Heart',
     value: 10,
-    img: " "
-},
+    img: ' '
+  },
 
-{
+  {
     name: 'King',
-    suit: "Heart",
+    suit: 'Heart',
     value: 10,
-    img: " "
-},
+    img: ' '
+  },
 
-{
-  name: 'Spade',
-  suit: "Heart",
-  value: 11,
-  img: " "
-},
+  {
+    name: 'Spade',
+    suit: 'Heart',
+    value: 11,
+    img: 'images/AC.png'
+  },
 
+  {
+    name: 'Two',
+    suit: 'Club',
+    value: 2,
+    img: 'images/2C.png'
+  },
 
+  {
+    name: 'Three',
+    suit: 'Club',
+    value: 3,
+    img: 'images/3C.png'
+  },
 
+  {
+    name: 'Four',
+    suit: 'Club',
+    value: 4,
+    img: 'images/4C.png'
+  },
 
-
-
-{
-  name: 'Two',
-  suit: "Club",
-  value: 2,
-  img: " "
-},
-
-{
-  name: 'Three',
-  suit: "Club",
-  value: 3,
-  img: " "
-},
-
-{
-  name: 'Four',
-  suit: "Club",
-  value: 4,
-  img: " "
-},
-
-{
+  {
     name: 'Five',
-    suit: "Club",
+    suit: 'Club',
     value: 5,
-    img: " "
-},
+    img: 'images/5C.png'
+  },
 
-{
+  {
     name: 'Six',
-    suit: "Club",
+    suit: 'Club',
     value: 6,
-    img: " "
-},
+    img: 'images/6C.png'
+  },
 
-{  
+  {
     name: 'Seven',
-    suit: "Club",
+    suit: 'Club',
     value: 7,
-    img: " "
-},
+    img: 'images/7C.png'
+  },
 
-{
+  {
     name: 'Eight',
-    suit: "Club",
+    suit: 'Club',
     value: 8,
-    img: " "
-},
+    img: 'images/8C.png'
+  },
 
-{
+  {
     name: 'Nine',
-    suit: "Club",
+    suit: 'Club',
     value: 9,
-    img: " "
-},
+    img: 'images/9C.png'
+  },
 
-{
+  {
     name: 'Ten',
-    suit: "Club",
+    suit: 'Club',
     value: 10,
-    img: " "
-},
+    img: 'images/10C.png'
+  },
 
-{
+  {
     name: 'Jack',
-    suit: "Club",
+    suit: 'Club',
     value: 10,
-    img: " "
-},
+    img: 'images/JC.png'
+  },
 
-{
+  {
     name: 'Queen',
-    suit: "Club",
+    suit: 'Club',
     value: 10,
-    img: " "
-},
+    img: 'images/QC.png'
+  },
 
-{
+  {
     name: 'King',
-    suit: "Club",
+    suit: 'Club',
     value: 10,
-    img: " "
-},
+    img: 'images/KC.png'
+  },
 
-{
-  name: 'Spade',
-  suit: "Club",
-  value: 11,
-  img: " "
-},
+  {
+    name: 'Spade',
+    suit: 'Club',
+    value: 11,
+    img: 'images/AC.png'
+  },
 
+  {
+    name: 'Two',
+    suit: 'Ace',
+    value: 2,
+    img: ' '
+  },
 
+  {
+    name: 'Three',
+    suit: 'Ace',
+    value: 3,
+    img: ' '
+  },
 
-{
-  name: 'Two',
-  suit: "Ace",
-  value: 2,
-  img: " "
-},
+  {
+    name: 'Four',
+    suit: 'Ace',
+    value: 4,
+    img: ' '
+  },
 
-{
-  name: 'Three',
-  suit: "Ace",
-  value: 3,
-  img: " "
-},
-
-{
-  name: 'Four',
-  suit: "Ace",
-  value: 4,
-  img: " "
-},
-
-{
+  {
     name: 'Five',
-    suit: "Ace",
+    suit: 'Ace',
     value: 5,
-    img: " "
-},
+    img: ' '
+  },
 
-{
+  {
     name: 'Six',
-    suit: "Ace",
+    suit: 'Ace',
     value: 6,
-    img: " "
-},
+    img: ' '
+  },
 
-{    
+  {
     name: 'Seven',
-    suit: "Ace",
+    suit: 'Ace',
     value: 7,
-    img: " "
-},
+    img: ' '
+  },
 
-{
+  {
     name: 'Eight',
-    suit: "Ace",
+    suit: 'Ace',
     value: 8,
-    img: " "
-},
+    img: ' '
+  },
 
-{
+  {
     name: 'Nine',
-    suit: "Ace",
+    suit: 'Ace',
     value: 9,
-    img: " "
-},
+    img: ' '
+  },
 
-{
+  {
     name: 'Ten',
-    suit: "Ace",
+    suit: 'Ace',
     value: 10,
-    img: " "
-},
+    img: ' '
+  },
 
-{
+  {
     name: 'Jack',
-    suit: "Ace",
+    suit: 'Ace',
     value: 10,
-    img: " "
-},
+    img: ' '
+  },
 
-{
+  {
     name: 'Queen',
-    suit: "Ace",
+    suit: 'Ace',
     value: 10,
-    img: " "
-},
+    img: ' '
+  },
 
-{
+  {
     name: 'King',
-    suit: "Ace",
+    suit: 'Ace',
     value: 10,
-    img: " "
-},
+    img: ' '
+  },
 
-{ 
-  name: 'Spade',
-  suit: "Ace",
-  value: 11,
-  img: " "
-}
-
-  ]
-
-
-
-
+  {
+    name: 'Spade',
+    suit: 'Ace',
+    value: 11,
+    img: 
+  }
+]
 
 const checkDealerWin = () => {
   if (dealerSum === 21) {
-   message.innerHTML = "Dealer have BlackJack!" + "Dealer Sum: " + dealerSum + "Player Sum: " + sum
-   console.log("Dealer have BlackJack!")
-   } else if(dealerSum >= 22){
-   message.innerHTML = "You have Won BlackJack!"
-   console.log("You have Won BlackJack!")
-   } else if(dealerSum > sum && dealerSum < 22){
-     message.innerHTML = "Dealer have BlackJack!"
-   console.log("Dealer have BlackJack!")
-   } else if (sum > dealerSum && sum < 22){
-   message.innerHTML = "You have Won BlackJack!"
-    console.log("You have Won BlackJack!")
-   }
- }
-
-const stayFunction = () => {
-startGameButton.disabled = true
-stayButton.disabled = true
-newCardButton.disabled = true
-dealerFunction()
+    message.innerHTML =
+      'Dealer have BlackJack!' +
+      'Dealer Sum: ' +
+      dealerSum +
+      'Player Sum: ' +
+      sum
+    console.log('Dealer have BlackJack!')
+  } else if (dealerSum >= 22) {
+    message.innerHTML = 'You have Won BlackJack!'
+    console.log('You have Won BlackJack!')
+  } else if (dealerSum > sum && dealerSum < 22) {
+    message.innerHTML = 'Dealer have BlackJack!'
+    console.log('Dealer have BlackJack!')
+  } else if (sum > dealerSum && sum < 22) {
+    message.innerHTML = 'You have Won BlackJack!'
+    console.log('You have Won BlackJack!')
+  }
 }
 
-
+const stayFunction = () => {
+  startGameButton.disabled = true
+  stayButton.disabled = true
+  newCardButton.disabled = true
+  dealerFunction()
+}
 
 const dealerFunction = () => {
-  const randomIndex = (Math.floor(Math.random()*51))
+  const randomIndex = Math.floor(Math.random() * 51)
   let x = deck[randomIndex].value
-  console.log(x)
   dealerCard.push(x)
   let finalValue = []
   dealerSum += dealerCard
   deck.shift()
-  
- dealerCard.forEach((num) =>{
- finalValue.push(num)
- console.log(finalValue)
- dealerSum = finalValue.reduce((int, value) => int + value, 0)
-    
+
+  dealerCard.forEach((num) => {
+    finalValue.push(num)
+    dealerSum = finalValue.reduce((int, value) => int + value, 0)
   })
 
-
- if(dealerSum < 17){
-   dealerFunction()
- } else {
-  checkDealerWin()
+  if (dealerSum < 17) {
+    dealerFunction()
+  } else {
+    checkDealerWin()
   }
- 
-  
- console.log("Dealer draw" + " " + dealerSum)
- console.log("Your draw" + " " + sum)
 }
-
-
-
-
-
 
 stayButton.addEventListener('click', () => stayFunction())
 
 resetButton.addEventListener('click', () => resetGame())
 
-
 const resetGame = () => {
-location.reload()
-
-
- }
-
-const startGame = () => {
-const randomIndex = (Math.floor(Math.random()*51))
-
-
-
-let x = deck[randomIndex].value
-// let x = deck[0]
-cards.push(x)
-
-deck.shift()
-console.log(x)
-startGameButton.disabled = true
-player.innerHTML = "Cards: " + " " + cards
-total.innerHTML = "Sum: " + " " + cards
-
-// checkWin()
-
-
-  console.log("you have pressed the button")
- 
+  location.reload()
 }
 
+const startGame = () => {
+  const randomIndex = Math.floor(Math.random() * 51)
+
+  let x = deck[randomIndex].value
+
+  cards.push(x)
+
+  deck.shift()
+  startGameButton.disabled = true
+  player.innerHTML = 'Cards: ' + ' ' + x.img
+  total.innerHTML = 'Sum: ' + ' ' + cards
+}
 
 const newCard = () => {
-  const randomIndex = (Math.floor(Math.random()*51))
+  const randomIndex = Math.floor(Math.random() * 51)
 
   let x = deck[randomIndex].value
   let finalValue = []
   cards.push(x)
-  sum =+ cards
+  sum = +cards
   deck.shift()
-  cards.forEach((num) =>{
-finalValue.push(num)
-sum = finalValue.reduce((int, value) => int + value, 0)
-    
-player.innerHTML = "Cards: " + " " + cards
-total.innerHTML = "Sum: " + " " + sum
+  cards.forEach((num) => {
+    finalValue.push(num)
+    sum = finalValue.reduce((int, value) => int + value, 0)
+
+    player.innerHTML = 'Cards: ' + ' ' + cards
+    total.innerHTML = 'Sum: ' + ' ' + sum
 
     return finalValue
-
-
   })
 
-console.log(sum)
-
-checkWin()
-  console.log('You have clicked new card button')
+  checkWin()
 }
 
 startGameButton.addEventListener('click', () => startGame())
@@ -535,27 +472,17 @@ startGameButton.addEventListener('click', () => startGame())
 newCardButton.addEventListener('click', () => newCard())
 
 const checkWin = () => {
-  if(sum < 20){
-  message.innerHTML = "Do You Want To Draw A New Card?"
-   console.log("Do You Want To Draw A New Card?")
-  } else if (sum === 21){
-    message.innerHTML = "You have BlackJack!"
-    console.log("You have BlackJack!")
+  if (sum < 20) {
+    message.innerHTML = 'Do You Want To Draw A New Card?'
+  } else if (sum === 21) {
+    message.innerHTML = 'You have BlackJack!'
     startGameButton.disabled = true
     stayButton.disabled = true
     newCardButton.disabled = true
-    
   } else if (sum > 21) {
     message.innerHTML = 'You have lost the game!'
-    console.log("You have lost the game!")
     startGameButton.disabled = true
     stayButton.disabled = true
     newCardButton.disabled = true
   }
-
-
-  
-
 }
-
-
