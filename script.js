@@ -518,11 +518,8 @@ const checkWin = () => {
   compareMessage.innerHTML = ' ; Dealer Sum:___'
 
   console.log(sum)
-  //   console.log(cards)
-  //   let x = deck[0].value
-  //  sum = sum + x
-  //  console.log(sum)
-  //  let a = deck[0].value
+
+  
 
   if (sum < 20) {
     message.innerHTML = 'Do You Want To Draw A New Card?'
