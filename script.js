@@ -380,14 +380,13 @@ let deck = [
 ]
 
 const checkDealerWin = () => {
-  console.log(dealerSum)
-  console.log(sum)
+
   if (dealerSum === 21) {
     message.innerHTML = 'Dealer have BlackJack!'
   } else if (dealerSum >= 22) {
     message.innerHTML = 'You have Won BlackJack!'
   } else if (dealerSum > sum && dealerSum <= 21) {
-    message.innerHTML = 'Dealer have BlackJack! 🎉'
+    message.innerHTML = 'Dealer have BlackJack!'
   } else if (sum > dealerSum && sum <= 21) {
     message.innerHTML = 'You have BlackJack! 🎊'
   }
@@ -403,7 +402,7 @@ const dealerFunction = () => {
   let finalValue = []
   dealerSum += dealerCard
 
-  console.log(dealerCard)
+  
 
   dealerCard.forEach((num) => {
     finalValue.push(num)
@@ -437,68 +436,33 @@ const startGame = () => {
     player.appendChild(img)
   }
 
-  // let x = deck[0].value
 
-  // cards.push(x)
 
   let a = deck[0].value
-  console.log(a)
+ 
   addPicP()
   deck.shift()
 
   let b = deck[0].value
-  console.log(b)
+  
   addPicP()
   deck.shift()
 
   let sum = a + b
-  console.log(cards)
+ 
 
   cards.push(a)
   cards.push(b)
-  console.log(a + b)
+ 
   startGameButton.disabled = true
   total.innerHTML = 'Your Sum: ' + ' ' + sum
   compareMessage.innerHTML = ' Dealer Sum:___' + dealerCard
   return sum
 }
 
-// const newCard = () => {
-//   addPicP = () => {
-//     var img = new Image()
-//     img.src = deck[0].img
-//     player.appendChild(img)
-//   }
-
-//   // let x = deck[0].value
-
-//   // sum = sum + x
-// console.log(cards)
-//   let a = deck[0].value
-//   console.log(a)
-//   addPicP()
-//   deck.shift()
-
-//   console.log(cards)
-//   cards.push(deck[0].value)
-
-//   let finalValue = []
-//   cards.forEach((num) => {
-//     finalValue.push(num)
-//     sum = finalValue.reduce((int, value) => int + value, 0)
-
-//     player.innerHTML = 'Cards:  ' + '  ' + cards
-//     total.innerHTML = 'Sum: ' + ' ' + sum
-//     compareMessage.innerHTML = 'Your Sum:' + sum + ' ' + ' ; Dealer Sum:___'
-
-//     return finalValue
-//   })
-
-//   checkWin()
-// // }
 
 drawCard = () => {
-  console.log(deck[0].value)
+
   let z = deck[0].value
   addPicP()
   cards.push(z)
@@ -510,12 +474,12 @@ drawCard = () => {
 startGameButton.addEventListener('click', () => startGame())
 
 newCardButton.addEventListener('click', () => drawCard())
-console.log(cards)
+
 const checkWin = () => {
   sum = cards.reduce((a, b) => {
     return a + b
   })
-  console.log(sum)
+  
   if (sum <= 21) {
     message.innerHTML = 'Do You Want To Draw A New Card?'
   } else if (sum > 21) {
@@ -527,5 +491,5 @@ const checkWin = () => {
   total.innerHTML = 'Your Sum: ' + ' ' + sum
   compareMessage.innerHTML = ' ; Dealer Sum:___'
 
-  console.log(sum)
+ 
 }
