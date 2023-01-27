@@ -1,4 +1,4 @@
-#### [BlackJack](http://fragile-cap.surge.sh)
+#### [BlackJack](http://classy-suit.surge.sh)
 
 # BlackJack
 
