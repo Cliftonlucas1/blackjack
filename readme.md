@@ -6,7 +6,7 @@
 
 ### By: Clifton Lucas
 
-#### [GitHub](https://github.com/Cliftonlucas1?tab=repositories) | [LinkedIn]() | [facebook](https://www.linkedin.com/in/clifton-lucas-b80540121/)
+#### [GitHub](https://github.com/Cliftonlucas1?tab=repositories) | [LinkedIn]() | [facebook](https://www.linkedin.com/in/clifton-lucas-b80540121/) | [trello](https://trello.com/b/CpfBWbfd/blackjack)
 
 ---
 
@@ -41,6 +41,8 @@
 - CSS
 
 ---
+
+![images](homescreen.png)
 
 ![images](display.png)
 
