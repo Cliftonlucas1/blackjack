@@ -380,17 +380,18 @@ let deck = [
 ]
 
 const checkDealerWin = () => {
+  console.log(dealerSum)
+  console.log(sum)
   if (dealerSum === 21) {
     message.innerHTML = 'Dealer have BlackJack!'
   } else if (dealerSum >= 22) {
     message.innerHTML = 'You have Won BlackJack!'
-  } else if (dealerSum > sum && dealerSum < 22) {
-    message.innerHTML = 'Dealer have BlackJack!'
-  } else if (sum > dealerSum && sum < 22) {
-    message.innerHTML = 'You have Won BlackJack!'
+  } else if (dealerSum > sum && dealerSum <= 21) {
+    message.innerHTML = 'Dealer have BlackJack! 🎉'
+  } else if (sum > dealerSum && sum <= 21) {
+    message.innerHTML = 'You have BlackJack! 🎊'
   }
 }
-
 
 const dealerFunction = () => {
   startGameButton.disabled = true
@@ -409,6 +410,7 @@ const dealerFunction = () => {
     dealerSum = finalValue.reduce((int, value) => int + value, 0)
     deck.shift()
   })
+  checkWin()
 
   if (dealerSum < 17) {
     dealerFunction()
@@ -431,7 +433,7 @@ const startGame = () => {
 
   addPicP = () => {
     var img = new Image()
-    img.src = deck[0].img 
+    img.src = deck[0].img
     player.appendChild(img)
   }
 
@@ -456,7 +458,6 @@ const startGame = () => {
   cards.push(b)
   console.log(a + b)
   startGameButton.disabled = true
-
   total.innerHTML = 'Your Sum: ' + ' ' + sum
   compareMessage.innerHTML = ' Dealer Sum:___' + dealerCard
   return sum
@@ -497,41 +498,34 @@ const startGame = () => {
 // // }
 
 drawCard = () => {
+  console.log(deck[0].value)
   let z = deck[0].value
   addPicP()
   cards.push(z)
   checkWin()
   deck.shift()
   return deck
-
 }
 
 startGameButton.addEventListener('click', () => startGame())
 
 newCardButton.addEventListener('click', () => drawCard())
-
+console.log(cards)
 const checkWin = () => {
-  let sum = cards.reduce((a, b) => {
+  sum = cards.reduce((a, b) => {
     return a + b
   })
-  total.innerHTML = 'Your Sum: ' + ' ' + sum
-  compareMessage.innerHTML = ' ; Dealer Sum:___'
-
   console.log(sum)
-
-  
-
-  if (sum < 20) {
+  if (sum <= 21) {
     message.innerHTML = 'Do You Want To Draw A New Card?'
-  } else if (sum === 21) {
-    message.innerHTML = 'You have BlackJack!'
-    startGameButton.disabled = true
-    stayButton.disabled = true
-    newCardButton.disabled = true
   } else if (sum > 21) {
     message.innerHTML = 'You have lost the game!'
     startGameButton.disabled = true
     stayButton.disabled = true
     newCardButton.disabled = true
   }
+  total.innerHTML = 'Your Sum: ' + ' ' + sum
+  compareMessage.innerHTML = ' ; Dealer Sum:___'
+
+  console.log(sum)
 }

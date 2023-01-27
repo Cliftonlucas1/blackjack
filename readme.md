@@ -1,9 +1,11 @@
-# BlackJack-
+# BlackJack
+
+![Markdown](./display.jpg)
 
 ## The game objective of the game is to beat the dealer, which can be done in the following ways:
 
-_Get 21 points on the player's first two cards (called a blackjack), without a dealer blackjack;
-Reach a final score higher than the dealer without exceeding 21._
+Get 21 points on the player's first two cards (called a blackjack), without a dealer blackjack;
+Reach a final score higher than the dealer without exceeding 21.\_
 
 _Let the dealer draw additional cards until his or her hand exceeds 21._
 
