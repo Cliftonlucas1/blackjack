@@ -4,23 +4,32 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
   <link rel="stylesheet" href="styles.css" />
+
+  <title>Document</title>
 </head>
 <body>
   <div class="container">
-  <h1>BlackJack</h1>
-  <h2 class="message-l"></h2>
-  <h2 class="compare-message">Dealer Sum:"___" </h2>
-  <p class="player-l">Cards:</p>
-  
-  <p class="sum-l">Your Sum:</p>
-  <button class="start-Game">Start Game</button>
-  <button class="new-Card">HIT</button>
-  <button class="stay-button">STAY</button>
-  <button class="reset-button">RESET</button>
-  
+  <h1>Welcome to BlackJack</h1>
+
+  <p>The game objective of the game is to beat the dealer, which can be done in the following ways:</p>
+  <p>
+    Get 21 points on the player's first two cards (called a blackjack), without a dealer blackjack;
+    Reach a final score higher than the dealer without exceeding 21.
+    Let the dealer draw additional cards until his or her hand exceeds 21.
+    The game the player has 1 deck of cards. It has to choose between the four options: Hit, Double Down , The rules for each implementation is described below:_
+    Hit: Take another card from dealer
+    Stay: Player takes no more cards and dealer draws the card.
+    Rules for the dealer in the game.
+  </p>
+    <p>Dealer hits until his cards total 17 or more points.
+    Dealer also hits on soft 17( when the dealer initial 2 card value is 17, an initial ace and six).
+    A blackjack beats any hand that is not a blackjack, even one with a value of 21.
+    In the case of a tied score, known as "push" or "standoff", bets are normally returned without adjustment; however, a blackjack beats any hand that is not a blackjack, even one with a value of 21.
+  </p>
+  <a href = "./game.html">  <button class="game-Mode">Go To Game</button> </a>
 </div>
+
 <script src="script.js"></script>
 </body>
 </html>

@@ -12,6 +12,7 @@ const message = document.querySelector('.message-l')
 const resetButton = document.querySelector('.reset-button')
 const stayButton = document.querySelector('.stay-button')
 const compareMessage = document.querySelector('.compare-message')
+const gameMode = document.querySelector('.game-Mode')
 
 let deck = [
   {
@@ -380,7 +381,6 @@ let deck = [
 ]
 
 const checkDealerWin = () => {
-
   if (dealerSum === 21) {
     message.innerHTML = 'Dealer have BlackJack!'
   } else if (dealerSum >= 22) {
@@ -401,8 +401,6 @@ const dealerFunction = () => {
   dealerCard.push(x)
   let finalValue = []
   dealerSum += dealerCard
-
-  
 
   dealerCard.forEach((num) => {
     finalValue.push(num)
@@ -436,33 +434,28 @@ const startGame = () => {
     player.appendChild(img)
   }
 
-
-
   let a = deck[0].value
- 
+
   addPicP()
   deck.shift()
 
   let b = deck[0].value
-  
+
   addPicP()
   deck.shift()
 
   let sum = a + b
- 
 
   cards.push(a)
   cards.push(b)
- 
+
   startGameButton.disabled = true
   total.innerHTML = 'Your Sum: ' + ' ' + sum
   compareMessage.innerHTML = ' Dealer Sum:___' + dealerCard
   return sum
 }
 
-
 drawCard = () => {
-
   let z = deck[0].value
   addPicP()
   cards.push(z)
@@ -475,11 +468,20 @@ startGameButton.addEventListener('click', () => startGame())
 
 newCardButton.addEventListener('click', () => drawCard())
 
+const pageClick = () => {
+  window.location = './game.html'
+  console.log('button was clicked')
+}
+
+gameMode.addEventListener('click', () => {
+  console.log('button was clicked')
+})
+
 const checkWin = () => {
   sum = cards.reduce((a, b) => {
     return a + b
   })
-  
+
   if (sum <= 21) {
     message.innerHTML = 'Do You Want To Draw A New Card?'
   } else if (sum > 21) {
@@ -490,6 +492,4 @@ const checkWin = () => {
   }
   total.innerHTML = 'Your Sum: ' + ' ' + sum
   compareMessage.innerHTML = ' ; Dealer Sum:__'
-
- 
 }

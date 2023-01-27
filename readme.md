@@ -1,4 +1,4 @@
-#### [BlackJack](fragile-cap.surge.sh)
+#### [BlackJack](http://fragile-cap.surge.sh)
 
 # BlackJack
 
@@ -28,7 +28,7 @@
 
 #### Dealer hits until his cards total 17 or more points.
 
-#### Dealer also hits on soft 17(i.e, when the dealer initial 2 card value is 17, eg. e.g., an initial ace and six).
+#### Dealer also hits on soft 17(i.e, when the dealer initial 2 card value is 17, an initial ace and six).
 
 #### A blackjack beats any hand that is not a blackjack, even one with a value of 21.
 
