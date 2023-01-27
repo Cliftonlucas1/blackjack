@@ -1,4 +1,4 @@
-#### [BlackJack](http://classy-suit.surge.sh)
+#### [BlackJack](http://scintillating-giraffe.surge.sh)
 
 # BlackJack
 
