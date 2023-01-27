@@ -489,7 +489,7 @@ const checkWin = () => {
     newCardButton.disabled = true
   }
   total.innerHTML = 'Your Sum: ' + ' ' + sum
-  compareMessage.innerHTML = ' ; Dealer Sum:___'
+  compareMessage.innerHTML = ' ; Dealer Sum:__'
 
  
 }
