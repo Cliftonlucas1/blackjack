@@ -380,6 +380,23 @@ let deck = [
   }
 ]
 
+const checkWin = () => {
+  sum = cards.reduce((a, b) => {
+    return a + b
+  })
+
+  if (sum <= 21) {
+    message.innerHTML = 'Do You Want To Draw A New Card?'
+  } else if (sum > 21) {
+    message.innerHTML = 'You have lost the game!'
+    startGameButton.disabled = true
+    stayButton.disabled = true
+    newCardButton.disabled = true
+  }
+  total.innerHTML = 'Your Sum: ' + ' ' + sum
+  compareMessage.innerHTML = ' ; Dealer Sum:__'
+}
+
 const checkDealerWin = () => {
   if (dealerSum === 21) {
     message.innerHTML = 'Dealer have BlackJack!'
@@ -393,10 +410,10 @@ const checkDealerWin = () => {
 }
 
 const dealerFunction = () => {
+  const randomIndex = Math.floor(Math.random() * 51)
   startGameButton.disabled = true
   stayButton.disabled = true
   newCardButton.disabled = true
-  const randomIndex = Math.floor(Math.random() * 51)
   let x = deck[0].value
   dealerCard.push(x)
   let finalValue = []
@@ -477,19 +494,4 @@ gameMode.addEventListener('click', () => {
   console.log('button was clicked')
 })
 
-const checkWin = () => {
-  sum = cards.reduce((a, b) => {
-    return a + b
-  })
 
-  if (sum <= 21) {
-    message.innerHTML = 'Do You Want To Draw A New Card?'
-  } else if (sum > 21) {
-    message.innerHTML = 'You have lost the game!'
-    startGameButton.disabled = true
-    stayButton.disabled = true
-    newCardButton.disabled = true
-  }
-  total.innerHTML = 'Your Sum: ' + ' ' + sum
-  compareMessage.innerHTML = ' ; Dealer Sum:__'
-}
